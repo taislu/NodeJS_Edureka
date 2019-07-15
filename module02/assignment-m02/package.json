@@ -4,20 +4,19 @@
   "description": "Edureka NodeJS Module02 Assignment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [
     "Fs",
-    "Operations",
-    "with",
     "Yargs",
-    "Deploy",
-    "App",
-    "with",
+    "Express",
     "pm2",
-    "and",
     "nginx"
   ],
   "author": "Tai Lu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

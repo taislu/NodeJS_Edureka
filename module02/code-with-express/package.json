@@ -1,0 +1,19 @@
+{
+  "name": "code-with-express",
+  "version": "1.0.0",
+  "description": "first express app",
+  "main": "index.js",
+  "scripts": {
+    "start":"node app.js",
+    "dev":"nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Tai Lu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
