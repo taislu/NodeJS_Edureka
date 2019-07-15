@@ -1,0 +1,23 @@
+{
+  "name": "assignment-m02",
+  "version": "1.0.0",
+  "description": "Edureka NodeJS Module02 Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Fs",
+    "Operations",
+    "with",
+    "Yargs",
+    "Deploy",
+    "App",
+    "with",
+    "pm2",
+    "and",
+    "nginx"
+  ],
+  "author": "Tai Lu",
+  "license": "ISC"
+}
