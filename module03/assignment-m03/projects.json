@@ -1,0 +1,17 @@
+[
+    {
+        "projectName": "FirstNet",
+        "description": "First Net Project",
+        "project_id": "p01"
+    },
+    {
+        "projectName": "Pocket WiFi",
+        "description": "Mobile New App",
+        "project_id": "p02"
+    },
+    {
+        "projectName": "Chat App",
+        "description": "Real Time Messaging",
+        "project_id": "p03"
+    }
+]

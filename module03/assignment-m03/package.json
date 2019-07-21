@@ -1,0 +1,23 @@
+{
+  "name": "assignment-m03",
+  "version": "1.0.0",
+  "description": "NodeJS Module03 Assignment Q1, Q2",
+  "main": "index.js",
+  "scripts": {
+    "start1": "node app1.js",
+    "dev1": "nodemon app1.js",
+    "start2": "node app2.js",
+    "dev2": "nodemon app2.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tai Lu",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.0"
+  }
+}
