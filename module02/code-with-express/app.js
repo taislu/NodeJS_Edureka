@@ -32,7 +32,7 @@ app.get('/getMovies', function(req,res){
         if(err) throw err;
         res.send(JSON.parse(data))
     })
-   
+
 });
 
 app.get('/getProducts', function(req,res){
@@ -40,7 +40,7 @@ app.get('/getProducts', function(req,res){
         if(err) throw err;
         res.send(JSON.parse(data))
     })
-   
+
 });
 
 app.listen(port,function(err){

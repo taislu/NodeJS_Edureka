@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Order Dashboard</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12"> 
+        <div class="panel">
+        <div class="panel-body">
+
+        <!-- OrderStatus START -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Admin Dashboard [Order Status]
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped" id="myTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Product_Name</th>
+                            <th>Quantity</th>
+                            <th>Order_Date</th>
+                            <th>Order_Status</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                            <% for(var i=0; i<data.length; i++) { %>
+                                <tr>
+                                    <td style="border-radius: 2px;" bgcolor="#2574a8" >
+                                        <a href="/sendEmail/<%= data[i].email %>" target="_blank" style="margin-left: 10px; border-radius: 12px;font-size: 14px; color: #ffffff;font-weight:bold;display: inline-block;">
+                                        Send Email             
+                                        </a>
+                                    </td>
+                                    
+                                    <td><%= data[i].name %></td>
+                                    <td><%= data[i].email %></td>
+                                    <td><%= data[i].product_name %></td>
+                                    <td><%= data[i].quantity %></td>
+                                    <td><%= data[i].order_date %></td>
+                                    <td><%= data[i].order_status %></td>
+                                    
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    <tfoot class="thead-dark">
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Product_Name</th>
+                            <th>Quantity</th>
+                            <th>Order_Date</th>
+                            <th>Order_Status</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <!-- OrderStatus END -->
+
+        </div>
+        </div>                              
+        </div><!--/col-12-->
+        </div>
+        </div> 
+
+        <!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Dashboard</title>
+        <!--
+        <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+        <script src="../public/js/bootstrap.min.js"></script>
+        <script src="../public/js/jquery-3.3.1.min.js"></script>
+        -->
+        <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../public/css/styles.css">
+        
+        <!-- For DataTables -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+        <script>
+                $(document).ready( function () {
+                    $('#myTable').DataTable();
+                } );
+        </script>
+        <!-- For DataTables -->
+        <script src="../public/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12"> 
+        <div class="panel">
+        <div class="panel-body">
+            <center>
+                <div>
+                    <a href="./addUser" class="btn btn-success" role="button">Add User</a>
+                </div>
+            </center>
+
+            <!-- OrderForm START -->
+        <div class="panel panel-primary">
+                <div class="panel-heading">
+                    New Order Form
+                </div>
+                <div class="panel-body">
+                    <form action="/addOrder" method="POST">
+                        <div class="form-group">
+                            <label for="name" >NAME</label>
+                            <input type="text" id="name"
+                                    name="name"
+                                    class="form-control"
+                            />
+                            <label for="email" >  EMAIL</label>
+                            <input type="email" id="email"
+                                    name="email"
+                                    class="form-control"
+                            />
+    
+                        </div>
+                        <div class="form-group">
+                            <label for="address">ADDRESS</label>
+                            <input type="text" id="address"
+                                    name="address"
+                                    class="form-control"
+                            />
+                            
+                        </div>
+                        
+                        <hr />
+                        <center>
+                                <button type="submit" class="btn btn-success">SUBMIT</button>
+                                <button type="reset" class="btn btn-danger">RESET</button>
+                        </center>
+                        
+                    </form>
+                </div>
+                </div>
+                <!-- OrderForm END -->
+
+
+            <!-- DataTable START -->
+            <h2>List of users</h2>
+            <div class="table-responsive">
+                <table id="myTable" class="display" style="width: 100%">
+                    <caption></caption>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i<data.length; i++) { %>
+                            <tr>
+                                <td><%= data[i].name %></td>
+                                <td><%= data[i].email %></td>
+                                <td><%= data[i].phone %></td>
+                                <td>
+                                    <button type="button" id="<%=data[i].name %>" class="update btn btn-warning" 
+                                        data-toggle="modal" data-target="#myModal" >Edit</button>
+                                      
+                                    <button type="button" id="<%=data[i].name %>" class="delete btn btn-danger"
+                                        value="<%=data[i].name %>" >Delete</button>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                    <tfoot class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- DataTable END -->
+    </div>
+    </div>                              
+    </div><!--/col-12-->
+    </div>
+    </div>
+    </body>
+</html>

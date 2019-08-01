@@ -1,0 +1,119 @@
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Dashboard</title>
+        
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../public/css/styles.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+        
+        <!-- DataTables Start -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+        <script>
+                $(document).ready( function () {
+                    $('#myTable').DataTable();
+                } );
+        </script>
+        <!-- DataTables End -->
+        
+    </head>
+    <body>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12"> 
+        <div class="panel">
+        <div class="panel-body">
+            <center>
+                <h3></h3>
+                <h5>Bug Tracker App</h5>
+            </center>
+            <!-- AddBug START -->
+             <div class="panel panel-primary">
+                <div class="panel-body">
+                    <form action="/addBug" method="POST">
+                        <div class="form-group">
+                            <label for="title" >Title</label>
+                            <input type="text" id="title" name="title" class="form-control" />
+  
+                            <label for="assignee">Assignee</label>
+                            <input type="text" id="assignee" name="assignee" class="form-control" />
+ 
+                            <label for="description" >Description</label>
+                            <input type="text" id="description" name="description" class="form-control" />
+                        </div>
+                        <center>
+                                <button type="submit" class="btn btn-success">Add Bug</button>
+                                <button type="reset" class="btn btn-danger">RESET</button>
+                        </center>
+                        <hr />
+                    </form>
+                </div>
+            </div>
+            <!-- AddBug END -->
+
+
+            <!-- DataTable START -->
+            <div class="table-responsive">
+                <table id="myTable" class="display" style="width: 100%">
+                    <caption></caption>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Status</th>
+                            <th>Title</th>
+                            <th>Assignee</th>
+                            <th>Created Time</th>
+                            <th>SLA Target</th>
+                            <th>Closed Time</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- -->
+                        <% for(let i=0; i<data.length; i++) { %>
+                            <tr>
+                                <td><%= data[i].status %></td>
+                                <td><%= data[i].title %></td>
+                                <td><%= data[i].assignee %></td>
+                                <td><%= data[i].createTimeStr %></td>
+                                <td><%= data[i].slaTimeStr %></td>
+                                <td><%= data[i].closeTimeStr %></td>
+                                <td>
+                                        <a href="/closeBug/<%= data[i]._id %>" style="margin-left: 10px; border-radius: 12px;font-size: 14px; color: #261241;font-weight:bold;display: inline-block;">
+                                            CLOSE             
+                                        </a>
+                                        <a href="/deleteBug/<%= data[i]._id %>" style="margin-left: 10px; border-radius: 12px;font-size: 14px; color: #740b0b;font-weight:bold;display: inline-block;">
+                                            DELETE             
+                                        </a>
+                                </td>
+                            </tr>
+                        <% } %>
+                        
+                    </tbody>
+                    <tfoot class="thead-dark">
+                        <tr>
+                            <th>Status</th>
+                            <th>Title</th>
+                            <th>Assignee</th>
+                            <th>Created Time</th>
+                            <th>SLA Target</th>
+                            <th>Closed Time</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- DataTable END -->
+    </div>
+    </div>                              
+    </div><!--/col-12-->
+    </div>
+    </div>
+    </body>
+</html>

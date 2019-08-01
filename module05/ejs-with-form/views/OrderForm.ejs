@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>New Order Form</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12"> 
+        <div class="panel">
+        <div class="panel-body">
+
+        <!-- OrderForm START -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                New Order Form
+            </div>
+            <div class="panel-body">
+                <form action="/addOrder" method="POST">
+                    <div class="form-group">
+                        <label for="name" >NAME</label>
+                        <input type="text" id="name"
+                                name="name"
+                                class="form-control"
+                        />
+                        <label for="email" >  EMAIL</label>
+                        <input type="email" id="email"
+                                name="email"
+                                class="form-control"
+                        />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="address">ADDRESS</label>
+                        <input type="text" id="address"
+                                name="address"
+                                class="form-control"
+                        />
+                        <hr />
+                    </div>
+                    <div class="form-inline">
+                            <label for="product_name" >Product Name</label>
+                            <input type="text" id="pname"
+                                    name="product_name"
+                                    class="form-control"
+                            />
+                            <label for="unit_price" >Unit Price</label>
+                            <input type="text" id="uprice"
+                                    name="unit_price"
+                                    class="form-control"
+                            />
+                            <label for="quantity" >Quantity</label>
+                            <input type="text" id="qty"
+                                    name="quantity"
+                                    class="form-control"
+                            />
+    
+                        </div>
+                    <hr />
+                    <center>
+                            <button type="submit" class="btn btn-success">SUBMIT</button>
+                            <button type="reset" class="btn btn-danger">RESET</button>
+                    </center>
+                    
+                </form>
+            </div>
+            </div>
+            <!-- OrderForm END -->
+
+        </div>
+        </div>                              
+        </div><!--/col-12-->
+        </div>
+        </div> 
+
+        <!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
