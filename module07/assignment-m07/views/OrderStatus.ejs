@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Dashboard</title>
+        
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+        
+        <!-- DataTables Start -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+        <script>
+                $(document).ready( function () {
+                    $('#myTable').DataTable();
+                } );
+        </script>
+        <!-- DataTables End -->
+    </head>
+    <body>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12"> 
+        <div class="panel">
+        <div class="panel-body">
+        <div class="alert alert-primary" role="alert">
+            <span>NAME  : <%= user.name %>, </span>
+            <span>ROLE  : <%= user.role %> </span>
+            <p>EMAIL : <%= user.email %></p>
+        </div>
+
+        <!-- OrderStatus START -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Dashboard [Order Status]
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped" id="myTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Product_Name</th>
+                            <th>Quantity</th>
+                            <th>Order_Date</th>
+                            <th>Order_Status</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                            <% for(var i=0; i<data.length; i++) { %>
+                                <tr>
+                                    <!--
+                                    <td style="border-radius: 2px;" bgcolor="#2574a8" >
+                                        <a href="/sendEmail/<%= data[i].email %>" target="_blank" style="margin-left: 10px; border-radius: 12px;font-size: 14px; color: #ffffff;font-weight:bold;display: inline-block;">
+                                        Send Email             
+                                        </a>
+                                    </td>
+                                    -->
+                                    <td><%= data[i].name %></td>
+                                    <td><%= data[i].email %></td>
+                                    <td><%= data[i].product_name %></td>
+                                    <td><%= data[i].quantity %></td>
+                                    <td><%= data[i].order_date %></td>
+                                    <td><%= data[i].order_status %></td>
+                                    
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    <tfoot class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Product_Name</th>
+                            <th>Quantity</th>
+                            <th>Order_Date</th>
+                            <th>Order_Status</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <!-- OrderStatus END -->
+
+        </div>
+        </div>                              
+        </div><!--/col-12-->
+        </div>
+        </div> 
+    </body>
+</html>

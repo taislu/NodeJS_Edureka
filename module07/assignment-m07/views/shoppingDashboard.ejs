@@ -1,0 +1,162 @@
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Dashboard</title>
+        
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+
+        <!-- DataTables Start -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+        <script>
+                $(document).ready( function () {
+                    $('#myTable').DataTable();
+                } );
+        </script>
+        <!-- DataTables End -->
+        
+    </head>
+    <body>
+
+    <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/userDashboard">User List </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/admin/shoppingDashboard">Shopping List </a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/logout">Log Out </a>
+                            </li>            
+                        </ul>
+                    </div>
+                </nav>
+    <div class="alert alert-success" role="alert">
+        <span>NAME  : <%= user.name %>,  </span>
+        <span>ROLE  : <%= user.role %>,  </span>
+        <span>EMAIL : <%= user.email %>  </span>
+    </div>
+    
+    <div class="row">
+        <!--/col-6-->
+        <div class="col-md-6"> 
+        <div class="panel">
+        <div class="panel-body">
+            
+        <!-- OrderForm START -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                New Order Form
+            </div>
+            <div class="panel-body">
+                <form action='/admin/addOneOrder' method='POST'>
+                    <div class="form-group">
+                        <label for="name" >NAME</label>
+                        <input type="text" id="name" name="name" class="form-control" />
+                        
+                        <label for="email" >  EMAIL</label>
+                        <input type="email" id="email" name="email" class="form-control" />
+                        
+                        <label for="address">ADDRESS</label>
+                        <input type="text" id="address" name="address" class="form-control" />
+  
+                        <label for="product_name" >Product Name</label>
+                        <input type="text" id="pname" name="product_name" class="form-control" />
+  
+                        <label for="unit_price" >Unit Price</label>
+                        <input type="text" id="uprice" name="unit_price" class="form-control" />
+  
+                        <label for="quantity" >Quantity</label>
+                        <input type="text" id="qty" name="quantity" class="form-control" />
+  
+                    </div>
+                    <center>
+                            <button type="submit" class="btn btn-success">SUBMIT</button>
+                            <button type="reset" class="btn btn-danger">RESET</button>
+                    </center>
+                    <hr />
+                    <div class="alert alert-info" role="alert">
+                        <%=msg%>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- OrderForm END -->   
+             
+        </div>
+        </div>                              
+        </div>
+        <!--/col-6-->
+        
+        <div class="col-md-6"> 
+        <div class="panel">
+        <div class="panel-body">
+            
+        <!-- OrderStatus START -->
+        <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Dashboard [Order Status]
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped" id="myTable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Product_Name</th>
+                                <th>Quantity</th>
+                                <th>Order_Date</th>
+                                <th>Order_Status</th>
+                            </tr>
+                        </thead> 
+                        <tbody>
+                                <% for(var i=0; i<data.length; i++) { %>
+                                    <tr>
+                                        <td><%= data[i].name %></td>
+                                        <td><%= data[i].email %></td>
+                                        <td><%= data[i].product_name %></td>
+                                        <td><%= data[i].quantity %></td>
+                                        <td><%= data[i].order_date %></td>
+                                        <td><%= data[i].order_status %></td>
+                                        
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        <tfoot class="thead-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Product_Name</th>
+                                <th>Quantity</th>
+                                <th>Order_Date</th>
+                                <th>Order_Status</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <!-- OrderStatus END -->
+            
+        </div>
+        </div>                              
+        </div>
+        
+        <!--/col-6-->
+    </div>
+    </div>
+    <script>
+        // class selector
+        const message = $('.alert.alert-info')
+        if ( message.length ) setTimeout( () => {message.fadeOut( 'slow' );}, 3000 );
+    </script>
+    </body>
+</html>

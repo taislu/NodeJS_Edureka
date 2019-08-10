@@ -1,0 +1,100 @@
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Dashboard</title>
+        
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+        
+    </head>
+    <body>
+    <div class="container">
+    <div class="row">
+        <!--/col-6-->
+        <div class="col-md-6"> 
+        <div class="panel">
+        <div class="panel-body">
+            <center>
+                <h5></h5>
+                <h5>REGISTER</h5>
+            </center>
+             <div class="panel panel-info">
+                <div class="panel-body">
+                    <form action="/api/auth/registerAdmin" method="POST">
+                        <div class="form-group">
+                            <label for="name" >Name</label>
+                            <input type="text" id="name" name="name" class="form-control" />
+  
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" />
+ 
+                            <label for="password" >Password</label>
+                            <input type="text" id="password" name="password" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                                <label for="role">select a role</label>
+                                <select multiple class="form-control" id="role" name="role">
+                                  <option>admin</option>
+                                  <option>normal</option>
+                                </select>
+                              </div>
+                        <hr />
+                        <center>
+                                <button type="submit" class="btn btn-info">Register</button>
+                                <button type="reset" class="btn btn-warning">RESET</button>
+                        </center>
+                        <hr />
+                        <div class="alert alert-info" role="alert">
+                            <%=msg%>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>                              
+        </div>
+        <!--/col-6-->
+        <!--
+        <div class="col-md-6"> 
+            <div class="panel">
+            <div class="panel-body">
+                <center>
+                    <h5></h5>
+                    <h5>LOG IN</h5>
+                </center>
+                 <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form action="/api/auth/login" method="POST">
+                            <div class="form-group">
+                                
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" />
+     
+                                <label for="password" >Password</label>
+                                <input type="password" id="password" name="password" class="form-control" />
+                            </div>
+                            <hr />
+                            <center>
+                                    <button type="submit" class="btn btn-success">Log In</button>
+                                    <button type="reset" class="btn btn-danger">RESET</button>
+                            </center>
+                            <hr />
+                            <div class="alert alert-danger" role="alert">
+                                    <%=invalid%>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+        </div>                              
+        </div>
+        -->
+        <!--/col-6-->
+    </div>
+    </div>
+    </body>
+</html>

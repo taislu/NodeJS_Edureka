@@ -1,0 +1,27 @@
+{
+  "name": "simple-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "nodemon start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "socket-io",
+    "express",
+    "es6"
+  ],
+  "author": "Tai Lu",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-polyfill": "^6.26.0",
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  }
+}
