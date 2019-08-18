@@ -1,0 +1,32 @@
+{
+  "name": "assignment-m09",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "nodemon start.js",
+    "test": "mocha -timeout 15000"
+  },
+  "keywords": [
+    "node",
+    "express api",
+    "mongodb",
+    "mocha",
+    "chai"
+  ],
+  "author": "Tai Lu",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "express": "^4.17.1",
+    "mocha": "^6.2.0",
+    "mongodb": "^3.3.0-beta2"
+  }
+}

@@ -1,0 +1,77 @@
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Media App</title>
+        <!-- jQuery needs to be placed before bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+    
+    </head>
+    <body>
+    <div class="container">
+
+    <!-- Nav bar Start-->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">MediaApp</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/sports">Sports</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about_us">About Us</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/contact_us">Contact Us</a>
+        </li>
+      </ul>
+    </div> 
+    </nav>
+    <br><br><br>
+    <!-- Nav bar End-->
+    <h3 style="color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;"> 
+        Latest Sports News 
+    </h3>
+    <div class="row">
+        <!-- col-12 -->
+        <div class="col-md-12"> 
+        <div class="panel">
+        <div class="panel-body">
+            <% for(var i=0; i<data.length; i++) {%>
+                <div class="media" style="margin-bottom: 15px; box-shadow: 10px 10px 5px grey;">
+                    <img src=<%= data[i].urlToImage %> style="width:250px; height:250px;" class="align-self-center mr-3" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0" style="text-shadow: 1px 1px 2px greenyellow;"> <%= data[i].title %> </h5>
+                        <p> <%= data[i].description %> </p>
+                        <p class="mb-0"> <%= data[i].content %> </p>
+                        <a href=<%= data[i].url %> target="_blank"> Click here for more details</a>
+                        <p class="mb-0"> Published At : <%= data[i].publishedAt %> </p>
+                        <p class="mb-0"> Source : <%= data[i].source.name %>, <%= data[i].author %> </p>
+                    </div>
+                </div>
+            <%}%>    
+        
+        </div>
+        </div>                              
+        </div>
+        <!-- col-12 -->
+    </div>
+    </div>
+    <%- include ./partial/footer.ejs %>
+    
+    </body>
+</html>

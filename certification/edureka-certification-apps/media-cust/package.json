@@ -1,0 +1,36 @@
+{
+  "name": "media-cust",
+  "version": "1.0.0",
+  "description": "media customer facing app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "nodemon start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ES6",
+    "Babel",
+    "Express",
+    "EJS"
+  ],
+  "author": "Tai Lu",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "axios": "^0.19.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.0",
+    "mongoose": "^5.6.9",
+    "node-iplocate": "^1.0.1",
+    "public-ip": "^3.2.0",
+    "socket.io": "^2.2.0"
+  }
+}

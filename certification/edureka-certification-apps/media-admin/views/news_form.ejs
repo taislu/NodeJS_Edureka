@@ -1,0 +1,109 @@
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Media Admin</title>
+        <!-- jQuery needs to be placed before bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+    
+    </head>
+    <body>
+    <div class="container">
+
+    <!-- Nav bar Start-->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Dashboard</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <!--
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Sing In</a>
+        </li>
+        -->
+        <li class="nav-item active">
+            <a class="nav-link" href="/admin/newsForm">NewsForm</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/getNews">EditNews</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/admin/logout">Logout</a>
+        </li>
+      </ul>
+    </div> 
+    </nav>
+    <br><br>
+    <!-- Nav bar End-->
+    <div class="alert alert-success" role="alert">
+        <span>User Name  : <%= user.name %>,  </span>
+        <span>Email : <%= user.email %>  </span>
+    </div>
+    <div class="row">
+        <!-- col-12 -->
+        <div class="col-md-12"> 
+        <div class="panel">
+        <div class="panel-body">
+            <center>
+                <h5></h5>
+                <h5>Add News</h5>
+            </center>
+             <div class="panel panel-info">
+             <div class="panel-body">
+                <form action="/admin/addNews" method="POST">
+                    <div class="form-group">
+                        <label for="title" >Title</label>
+                        <input type="text" id="title" name="title" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="description" >Description</label>
+                        <input type="text" id="description" name="description" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Url</label>
+                        <input type="text" id="url" name="url" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="urlToImage" >Url To Image</label>
+                        <input type="text" id="urlToImage" name="urlToImage" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="publishedAt" >Published At</label>
+                        <input type="text" id="publishedAt" name="publishedAt" class="form-control" required />
+                    </div>
+                    <hr />
+                    <center>
+                            <button type="submit" class="btn btn-info">Add</button>
+                            <button type="reset" class="btn btn-warning">RESET</button>
+                    </center>
+                    <hr />
+                    <div class="alert alert-info" role="alert" id="msg1">
+                        <%=msg%>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>                              
+        </div>
+        <!-- col-12 -->
+    </div>
+    </div>
+    <script>
+        // class selector
+        const message = $('.alert.alert-info')
+        if ( message.length ) setTimeout( () => {message.fadeOut( 'slow' );}, 3000 );
+        
+    </script>
+    </body>
+</html>

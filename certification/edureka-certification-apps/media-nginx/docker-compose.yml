@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+    admin:
+        container_name: media-admin
+        image: taislu92503/media-admin-app
+        restart: always
+        ports:
+          - "9900:9900"
+        networks:
+          - medianet
+
+    cust:
+        container_name: media-cust
+        image: taislu92503/media-cust-app
+        restart: always
+        ports:
+          - "9901:9901"
+        networks:
+          - medianet
+
+    reverseproxy:
+        container_name: media-nginx
+        image: taislu92503/media-nginx
+        ports:
+          - "80:8080"
+        networks:
+          - medianet
+
+networks:
+  medianet:
+    driver: bridge

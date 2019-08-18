@@ -1,0 +1,103 @@
+<html ang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <title>Media App</title>
+        <link rel="stylesheet" href="aboutus_styles.css">
+
+        <!-- jQuery needs to be placed before bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <!-- Bootstrap Start -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap End -->
+    </head>
+    <body>
+    <!-- Nav bar Start-->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">MediaApp</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/sports">Sports</a>
+          </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/about_us">About Us</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/contact_us">Contact Us</a>
+        </li>
+      </ul>
+    </div> 
+    </nav>
+    <br><br><br>
+    <!-- Nav bar End-->
+    
+    <!--Section-->
+    <section class="section pb-5">
+
+        <div class="row">
+      
+          <!--Grid column-->
+          <div class="col-lg-7" style="box-shadow: 10px 10px 5px darkkhaki;">
+            <div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 350px; margin: 10px;">
+                <iframe src="https://maps.google.com/maps?q=los%20angeles&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            
+            <div class="row text-center">
+              <div class="col-md-4">
+                <a class="btn-floating blue accent-1"><i class="fas fa-map-marker-alt"></i></a>
+                <p>Los Angeles, CA 90001</p>
+              </div>
+            </div>
+            
+          </div>
+          <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-lg-5 mb-4">
+                <!-- Card -->
+                <div class="card" style="margin: 10px; box-shadow: 10px 10px 5px darkkhaki;">
+                  <div class="card-body">
+                    <!--Header-->
+                    <div class="form-header blue accent-1">
+                      <h3 style="color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
+                        OUR MISSION
+                      </h3>
+                    </div>
+          
+                    <p style="font-size:22px;text-shadow: 1px 1px 2px gold">
+                        Part of our mission is to expose the local developer community to the process of contributing 
+                        to free and open source software (FOSS), regardless of their development experience. We provide 
+                        our members with a friendly workspace to work, learn and connect with other developers and 
+                        ndustry professionals. By leveraging open source software, our members can develop their skills 
+                        in various technologies while rubbing elbows with working industry professionals. Industry 
+                        professionals that volunteer to speak in our meetups help build stronger communities by sharing 
+                        their experience in the industry and with the technology they use every day; they give back to 
+                        their communities.
+                    </p>
+                
+                    <!--Body-->
+                  </div>
+                </div>
+                <!-- Card -->
+              </div>
+              <!--Grid column-->
+        </div>
+        <%- include ./partial/footer.ejs %>
+      </section>
+      <!--Section-->
+        
+    </body>
+</html>
